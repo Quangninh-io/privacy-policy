@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Niio: Period Tracker</title>
+<meta name="description" content="How Niio: Period Tracker handles your cycle and health data.">
+<style>
+  :root {
+    --ground: #FFF8F5;
+    --panel: #FFFFFF;
+    --panel-quiet: #F7F2F0;
+    --ink: #2D2826;
+    --ink-soft: #5C5350;
+    --muted: #9B8FA0;
+    --rule: #F0EBF0;
+    --accent: #D4605A;
+    --accent-quiet: #E8756A;
+    --safe: #3F8D77;
+    --mono-ink: #6E5F66;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #1C1817;
+      --panel: #262120;
+      --panel-quiet: #2E2827;
+      --ink: #F2E9E5;
+      --ink-soft: #C9BCB8;
+      --muted: #A2929A;
+      --rule: #3A3231;
+      --accent: #F0907F;
+      --accent-quiet: #E8756A;
+      --safe: #6FC5AB;
+      --mono-ink: #B4A2AB;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #1C1817;
+    --panel: #262120;
+    --panel-quiet: #2E2827;
+    --ink: #F2E9E5;
+    --ink-soft: #C9BCB8;
+    --muted: #A2929A;
+    --rule: #3A3231;
+    --accent: #F0907F;
+    --accent-quiet: #E8756A;
+    --safe: #6FC5AB;
+    --mono-ink: #B4A2AB;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5.5vw, 2.85rem);
+    line-height: 1.12;
+    letter-spacing: -0.022em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  .dates {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .summary {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: clamp(1.25rem, 3.5vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .summary h2 {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .summary ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .summary li { color: var(--ink-soft); }
+  .summary strong { color: var(--ink); font-weight: 650; }
+
+  section { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  h2.section-title {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    font-weight: 680;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    text-wrap: balance;
+  }
+
+  h2.section-title .num {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    flex: none;
+  }
+
+  p { margin: 0; color: var(--ink-soft); }
+  p.lede { color: var(--ink); font-size: 1.06rem; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  ul.plain { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.45rem; color: var(--ink-soft); }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--panel); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 0.7rem 0.95rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  th {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td { color: var(--ink-soft); }
+  td.field { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--mono-ink);
+    background: var(--panel-quiet);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+  }
+
+  .callout {
+    border-left: 3px solid var(--safe);
+    background: var(--panel-quiet);
+    padding: 0.95rem 1.15rem;
+    border-radius: 0 12px 12px 0;
+    color: var(--ink-soft);
+  }
+  .callout.warn { border-left-color: var(--accent-quiet); }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  footer { color: var(--muted); font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.4rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Niio: Period Tracker</p>
+    <h1>Privacy Policy</h1>
+    <p class="dates">Effective 8 August 2026 · Last updated 8 August 2026</p>
+  </header>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li>Everything you log — periods, symptoms, moods, notes — <strong>stays on your phone</strong>.</li>
+      <li>Niio has <strong>no accounts and no servers</strong>. We cannot read your cycle data, because it never reaches us.</li>
+      <li>The free version shows ads through Google AdMob, which collects device-level advertising data. <strong>Ads never receive your health data.</strong></li>
+      <li>Deleting the app deletes everything it stored.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2 class="section-title"><span class="num">01</span>Who this policy covers</h2>
+    <p>This policy explains how the Niio: Period Tracker mobile app ("Niio", "the app", "we") handles information. It applies to the Android and iOS versions of the app, and to nothing else — we operate no website accounts, newsletters, or other services tied to it.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">02</span>What the app stores</h2>
+    <p>Niio stores the following on your device so it can show your history and predict your next cycle. You choose what to enter; every field is optional.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Information</th><th scope="col">Why the app keeps it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="field">Period dates and flow intensity</td><td>Calculating cycle length, showing the calendar, predicting your next period</td></tr>
+          <tr><td class="field">Symptoms, moods, energy, sleep quality</td><td>The patterns and correlations shown on the Insights tab</td></tr>
+          <tr><td class="field">Personal notes</td><td>Displayed back to you on the day you wrote them; never analysed</td></tr>
+          <tr><td class="field">First name or nickname</td><td>Greeting you on the Today tab</td></tr>
+          <tr><td class="field">Birth year</td><td>Age-appropriate cycle estimates</td></tr>
+          <tr><td class="field">Onboarding answers</td><td>Your goal for using Niio, how you were feeling, and whether your cycle is usually regular — these tailor what the app shows</td></tr>
+          <tr><td class="field">Premium status</td><td>Remembering that you subscribed, so the app stays ad-free after a restart</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Technically, the daily logs live in a private SQLite database (<code>daily_logs</code>) inside the app's own storage, and the remaining settings live in the platform's standard app-preferences store. Both are sandboxed by Android and iOS: other apps cannot read them.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">03</span>What we never receive</h2>
+    <p class="lede">Niio has no backend. There is no login, no cloud sync, no backup service, and no analytics SDK in the app.</p>
+    <p>That is not a promise about how carefully we guard your data — it is a description of the architecture. Your cycle history is never transmitted anywhere, so the developer has no copy of it, no way to look at it, and nothing to hand over if asked.</p>
+    <div class="callout">
+      <strong>Practical consequence:</strong> because your data exists only on your phone, we cannot restore it for you. If you lose or reset the device without a system backup, the history is gone.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">04</span>Advertising</h2>
+    <p>The free version of Niio shows advertising supplied by <strong>Google AdMob</strong>. To serve and measure those ads, Google may collect and process:</p>
+    <ul class="plain">
+      <li>Your device's advertising identifier</li>
+      <li>IP address and approximate location derived from it</li>
+      <li>Device model, operating system version, and language</li>
+      <li>Which ads were shown, viewed, or tapped</li>
+    </ul>
+    <p>This is handled by Google under <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>, not by us. We receive only aggregate revenue figures — never information about an individual person.</p>
+    <div class="callout warn">
+      <strong>Your health data is not part of this.</strong> Nothing you log in Niio — no date, symptom, mood, or note — is passed to AdMob or used to target ads. The advertising SDK has no access to the app's database.
+    </div>
+    <p>You can limit ad tracking at any time: on Android, under <em>Settings → Privacy → Ads</em>, where you can delete or reset your advertising ID; on iOS, under <em>Settings → Privacy &amp; Security → Tracking</em>. Subscribing to Niio Premium removes all advertising from the app.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">05</span>Subscriptions and payment</h2>
+    <p>Niio Premium is sold as an auto-renewing subscription. Purchases are processed entirely by <strong>Google Play Billing</strong> on Android and the <strong>App Store</strong> on iOS.</p>
+    <p>We never see or store your card number, billing address, or any other payment detail. The app receives only a signal from the store confirming that a valid subscription exists, and records that as a single yes/no flag on your device. Manage or cancel your subscription in the Google Play or App Store subscription settings — cancelling there stops all future charges.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">06</span>Deleting your data</h2>
+    <p>Uninstalling Niio removes the app's database and settings from your device, and with them everything described in section 02. No copy remains, because no copy was ever made elsewhere.</p>
+    <p>If your device is set to back up app data automatically (Android Backup or iCloud), a copy may exist in that system backup under your own account. That backup is controlled by you through your Google or Apple settings; we have no access to it.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">07</span>Children</h2>
+    <p>Niio is not directed at children under 13, and we do not knowingly collect information from them. Younger users who track their cycle should do so with a parent or guardian's involvement.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">08</span>Niio is not medical advice</h2>
+    <p>Predictions in Niio are statistical estimates calculated from the dates you enter. They are not a diagnosis, and they are <strong>not a contraceptive method</strong> — do not rely on the fertile window or ovulation day shown in the app to prevent or achieve pregnancy. Cycles vary for many reasons, and the app cannot know about yours.</p>
+    <p>For anything concerning your health, talk to a qualified healthcare professional.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">09</span>Changes to this policy</h2>
+    <p>If the app starts handling data differently — for example if cloud sync or an account system is ever added — this page will be updated before that version ships, and the "last updated" date above will change. Material changes will also be noted in the app's release notes.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">10</span>Contact</h2>
+    <p>Questions about this policy or about your data can go to <a href="mailto:REPLACE_WITH_YOUR_SUPPORT_EMAIL">REPLACE_WITH_YOUR_SUPPORT_EMAIL</a>. We aim to reply within a few business days.</p>
+  </section>
+
+  <hr>
+
+  <footer>
+    <div>Niio: Period Tracker</div>
+    <div>This policy covers app version 1.0.0 and later.</div>
+  </footer>
+
+</div>
+</body>
+</html>
