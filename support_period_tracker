@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Niio: Period Tracker</title>
+<meta name="description" content="Get help with Niio: Period Tracker.">
+<style>
+  :root {
+    --ground: #FFF8F5;
+    --panel: #FFFFFF;
+    --panel-quiet: #F7F2F0;
+    --ink: #2D2826;
+    --ink-soft: #5C5350;
+    --muted: #9B8FA0;
+    --rule: #F0EBF0;
+    --accent: #D4605A;
+    --accent-quiet: #E8756A;
+    --safe: #3F8D77;
+    --mono-ink: #6E5F66;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #1C1817;
+      --panel: #262120;
+      --panel-quiet: #2E2827;
+      --ink: #F2E9E5;
+      --ink-soft: #C9BCB8;
+      --muted: #A2929A;
+      --rule: #3A3231;
+      --accent: #F0907F;
+      --accent-quiet: #E8756A;
+      --safe: #6FC5AB;
+      --mono-ink: #B4A2AB;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #1C1817;
+    --panel: #262120;
+    --panel-quiet: #2E2827;
+    --ink: #F2E9E5;
+    --ink-soft: #C9BCB8;
+    --muted: #A2929A;
+    --rule: #3A3231;
+    --accent: #F0907F;
+    --accent-quiet: #E8756A;
+    --safe: #6FC5AB;
+    --mono-ink: #B4A2AB;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5.5vw, 2.85rem);
+    line-height: 1.12;
+    letter-spacing: -0.022em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  .dates {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .summary {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: clamp(1.25rem, 3.5vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .summary h2 {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .summary ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .summary li { color: var(--ink-soft); }
+  .summary strong { color: var(--ink); font-weight: 650; }
+
+  section { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  h2.section-title {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    font-weight: 680;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    text-wrap: balance;
+  }
+
+  h2.section-title .num {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    flex: none;
+  }
+
+  p { margin: 0; color: var(--ink-soft); }
+  p.lede { color: var(--ink); font-size: 1.06rem; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  ul.plain { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.45rem; color: var(--ink-soft); }
+
+  .callout {
+    border-left: 3px solid var(--safe);
+    background: var(--panel-quiet);
+    padding: 0.95rem 1.15rem;
+    border-radius: 0 12px 12px 0;
+    color: var(--ink-soft);
+  }
+
+  details {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 0.95rem 1.15rem;
+  }
+  details + details { margin-top: -0.4rem; }
+  summary {
+    cursor: pointer;
+    font-weight: 650;
+    color: var(--ink);
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    float: right;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  details[open] summary::after { content: "–"; }
+  details p { margin-top: 0.6rem; }
+
+  .faq { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  footer { color: var(--muted); font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.4rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Niio: Period Tracker</p>
+    <h1>Support</h1>
+    <p class="dates">Get help with the app.</p>
+  </header>
+
+  <div class="summary">
+    <h2>Fastest way to reach us</h2>
+    <ul>
+      <li>Email <strong><a href="mailto:ninhdevelop.io@gmail.com?subject=Niio%20Support">ninhdevelop.io@gmail.com</a></strong></li>
+      <li>We aim to reply within a few business days.</li>
+      <li>In the app itself: <strong>Profile → Help &amp; Support</strong> opens this same email address for you.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2 class="section-title"><span class="num">01</span>Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How accurate are the predictions?</summary>
+        <p>Predictions start as an estimate based on the date you enter, then get more accurate the more cycles you log — the app always shows a confidence label (Estimate, Low, Medium, High) so you know how much history a prediction is based on.</p>
+      </details>
+      <details>
+        <summary>My reminders aren't showing up.</summary>
+        <p>Make sure notifications are allowed for Niio in your phone's system settings, and that reminders are turned on in the app's Profile tab. On some Android phones, battery-saving settings can also delay or block scheduled notifications — check that Niio is excluded from battery optimisation.</p>
+      </details>
+      <details>
+        <summary>How do I cancel or manage my subscription?</summary>
+        <p>Subscriptions are billed and managed entirely by the App Store or Google Play, not by us. On iPhone, go to Settings → your name → Subscriptions. On Android, open the Play Store app → Menu → Payments &amp; subscriptions → Subscriptions. Cancelling there stops all future charges.</p>
+      </details>
+      <details>
+        <summary>Is my data backed up anywhere?</summary>
+        <p>No — Niio has no accounts and no servers, so everything you log stays on your device. If your phone backs up app data automatically (iCloud or Android Backup), a copy may exist there under your own account, but we have no access to it and can't restore data for you.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <p>Uninstalling the app removes its database and settings from your device, and everything stored in them. There's nothing else to delete on our end, since nothing is stored anywhere but your phone.</p>
+      </details>
+      <details>
+        <summary>I can't get into the app after turning on App Lock.</summary>
+        <p>App Lock uses your phone's own Face ID, fingerprint, or screen-lock passcode — we have no way to bypass it. If your device's biometrics have changed or stopped working, use your device passcode as a fallback, or reinstall the app (this clears its data, since nothing is stored elsewhere).</p>
+      </details>
+      <details>
+        <summary>I found a bug or have a feature request.</summary>
+        <p>Email us with your device model, OS version, and what happened — screenshots help a lot. We read every message.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">02</span>Contact</h2>
+    <p>For anything not covered above, email <a href="mailto:ninhdevelop.io@gmail.com?subject=Niio%20Support">ninhdevelop.io@gmail.com</a>.</p>
+  </section>
+
+  <hr>
+
+  <footer>
+    <div>Niio: Period Tracker</div>
+    <div><a href="policyandroid.html">Privacy Policy</a></div>
+  </footer>
+
+</div>
+</body>
+</html>
