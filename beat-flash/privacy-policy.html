@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeatFlash Privacy Policy</title>
+<meta name="description" content="Privacy policy for the BeatFlash app — what data it does and doesn't collect." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #fbf9fc;
+    --surface: #ffffff;
+    --surface-2: #f3eef8;
+    --text: #1a1420;
+    --text-muted: #6b6478;
+    --border: #e7e1ec;
+    --accent: #ff007f;
+    --accent-2: #8b5cf6;
+    --accent-3: #06b6d4;
+    --shadow: 0 1px 2px rgba(26,20,32,.05), 0 12px 32px rgba(26,20,32,.07);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000;
+      --surface: #111116;
+      --surface-2: #16161c;
+      --text: #f2f0f5;
+      --text-muted: #a0a0aa;
+      --border: #22222a;
+      --shadow: 0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #111116;
+    --surface-2: #16161c;
+    --text: #f2f0f5;
+    --text-muted: #a0a0aa;
+    --border: #22222a;
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent-2); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* ---------- header ---------- */
+  .masthead {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .logo-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 22px;
+  }
+  .logo-bars span {
+    width: 4px;
+    border-radius: 2px;
+    transform-origin: bottom;
+    animation: pulse 1.15s ease-in-out infinite;
+  }
+  .logo-bars span:nth-child(1) { height: 10px; background: var(--accent); animation-delay: -.9s; }
+  .logo-bars span:nth-child(2) { height: 22px; background: var(--accent); animation-delay: -.5s; }
+  .logo-bars span:nth-child(3) { height: 15px; background: var(--accent-2); animation-delay: -.2s; }
+  .logo-bars span:nth-child(4) { height: 20px; background: var(--accent-2); animation-delay: -.7s; }
+  .logo-bars span:nth-child(5) { height: 12px; background: var(--accent-3); animation-delay: -1.05s; }
+  @keyframes pulse {
+    0%, 100% { transform: scaleY(.45); }
+    50% { transform: scaleY(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-bars span { animation: none; }
+  }
+
+  .wordmark {
+    font-family: "Unbounded", "Segoe UI", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: "Unbounded", "Segoe UI", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0 0 20px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .meta-row strong { color: var(--text); font-weight: 600; }
+
+  /* ---------- quick facts ---------- */
+  .facts {
+    margin: 40px 0 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+  }
+  .facts-title {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+  .facts dl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+    margin: 0;
+  }
+  .facts .fact { border-top: 1px solid var(--border); padding-top: 10px; }
+  .facts dt {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .facts dd {
+    margin: 0;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: 15.5px;
+  }
+  @media (max-width: 640px) {
+    .facts dl { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- layout: rail + content ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 48px;
+  }
+  @media (min-width: 900px) {
+    .layout {
+      grid-template-columns: 220px minmax(0, 700px);
+      gap: 56px;
+      align-items: start;
+    }
+  }
+
+  nav.toc {
+    position: relative;
+    padding-bottom: 32px;
+  }
+  @media (min-width: 900px) {
+    nav.toc { position: sticky; top: 32px; }
+  }
+  .toc-label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .toc a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 7px 0;
+    color: var(--text);
+    text-decoration: none;
+    font-family: "Unbounded", "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover { color: var(--accent); }
+  .toc a .n {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-muted);
+    min-width: 14px;
+  }
+
+  main { min-width: 0; }
+
+  .divider {
+    height: 2px;
+    border: 0;
+    margin: 44px 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+    opacity: .55;
+    border-radius: 2px;
+  }
+
+  section { scroll-margin-top: 24px; }
+  section + section { margin-top: 44px; }
+
+  h2 {
+    font-family: "Unbounded", "Segoe UI", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-wrap: balance;
+  }
+  h2 .n {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  section p { margin: 0 0 14px; max-width: 66ch; }
+  section p:last-child { margin-bottom: 0; }
+  section ul { margin: 0 0 14px; padding-left: 22px; max-width: 62ch; }
+  section li { margin-bottom: 6px; }
+
+  .callout {
+    border-left: 3px solid var(--accent-2);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 15.5px;
+    color: var(--text-muted);
+    max-width: 62ch;
+  }
+  .callout strong { color: var(--text); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  ::selection { background: var(--accent-2); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="brand">
+      <span class="logo-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </span>
+      <span class="wordmark">BeatFlash</span>
+    </div>
+
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>Almost nothing about you ever leaves your phone.</h1>
+    <p class="lede">
+      BeatFlash turns your device's flashlight into a light show for the music you already own.
+      This page explains, in plain language, exactly what that requires from your data — and what it doesn't.
+    </p>
+    <div class="meta-row">
+      <span>Effective <strong>August 21, 2026</strong></span>
+      <span>Applies to <strong>BeatFlash</strong> on iOS, Android, macOS, Windows &amp; Linux</span>
+    </div>
+
+    <div class="facts">
+      <p class="facts-title">At a glance</p>
+      <dl>
+        <div class="fact"><dt>Account required</dt><dd>None</dd></div>
+        <div class="fact"><dt>Data sold or shared</dt><dd>Never</dd></div>
+        <div class="fact"><dt>Where your data lives</dt><dd>On your device only</dd></div>
+        <div class="fact"><dt>Camera / photos</dt><dd>Never accessed</dd></div>
+        <div class="fact"><dt>Microphone</dt><dd>Never accessed</dd></div>
+        <div class="fact"><dt>Ads or trackers</dt><dd>None</dd></div>
+        <div class="fact"><dt>Payments</dt><dd>Handled by Apple / Google directly</dd></div>
+        <div class="fact"><dt>Analytics SDKs</dt><dd>None</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-label">On this page</p>
+      <ol>
+        <li><a href="#overview"><span class="n">1</span>Overview</a></li>
+        <li><a href="#not-collected"><span class="n">2</span>Information We Don't Collect</a></li>
+        <li><a href="#camera"><span class="n">3</span>Camera &amp; Flashlight Access</a></li>
+        <li><a href="#music-files"><span class="n">4</span>Your Music Files</a></li>
+        <li><a href="#purchases"><span class="n">5</span>In-App Purchases</a></li>
+        <li><a href="#storage"><span class="n">6</span>Local Storage &amp; Retention</a></li>
+        <li><a href="#third-party"><span class="n">7</span>Third-Party Services</a></li>
+        <li><a href="#children"><span class="n">8</span>Children's Privacy</a></li>
+        <li><a href="#rights"><span class="n">9</span>Your Rights &amp; Choices</a></li>
+        <li><a href="#changes"><span class="n">10</span>Changes to This Policy</a></li>
+        <li><a href="#contact"><span class="n">11</span>Contact</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <p>
+          BeatFlash pulses your device's torch in sync with a song's beat — nothing more. It doesn't need
+          an internet connection to do that, and it doesn't have a server sitting behind it collecting
+          anything while you use it. The short version of this whole policy: BeatFlash works almost entirely
+          on your device, so almost nothing about you ever has to leave it.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="not-collected">
+        <h2><span class="n">02</span>Information We Don't Collect</h2>
+        <p>
+          BeatFlash doesn't ask for an account, an email address, or a name — there's no sign-up screen,
+          because there's nothing to sign up for. We don't run analytics, advertising, or crash-reporting
+          SDKs inside the app, so we don't collect usage statistics, advertising identifiers, location,
+          contacts, or browsing history either.
+        </p>
+        <div class="callout">
+          <strong>In short:</strong> if a data point isn't listed elsewhere on this page, BeatFlash doesn't collect it.
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="camera">
+        <h2><span class="n">03</span>Camera &amp; Flashlight Access</h2>
+        <p>
+          BeatFlash requests access to your device's flash hardware so it can switch the torch on and off in
+          time with the music — the same physical LED your camera app uses. BeatFlash never activates the
+          camera sensor, and never takes, stores, or transmits photos or video. If another app is already
+          using the torch (an active camera session, for example), BeatFlash simply can't turn it on until
+          that app releases it; we don't request any broader camera permission than the light itself.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="music-files">
+        <h2><span class="n">04</span>Your Music Files</h2>
+        <p>
+          When you add a song from your device's storage, BeatFlash reads that file locally to play it back
+          and to generate its flash pattern. Both the file and the pattern stay on your device — BeatFlash
+          has no upload feature and no cloud library, so your music is never sent anywhere, by us or to us.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="purchases">
+        <h2><span class="n">05</span>In-App Purchases</h2>
+        <p>
+          BeatFlash Premium is a <strong>one-time, $9.99 unlock</strong> — pay once, keep it forever, no
+          subscription and no recurring charge. Purchases are processed entirely by the Apple App Store or
+          Google Play, using the payment method already on file with your Apple ID or Google account.
+          BeatFlash never sees or stores your card number, billing address, or any other payment detail —
+          we only receive the store's confirmation that a purchase went through, which we use to unlock
+          Premium on your device.
+        </p>
+        <p>
+          Tapping <em>Restore Purchase</em> works the same way in reverse: BeatFlash asks the store to
+          confirm your entitlement and unlocks accordingly. For anything about the payment itself —
+          receipts, refunds, disputed charges — Apple's and Google's own privacy and billing policies apply,
+          not ours.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="storage">
+        <h2><span class="n">06</span>Local Storage &amp; Retention</h2>
+        <p>
+          The only information BeatFlash keeps is stored in standard app preferences, on your device: whether
+          you've unlocked Premium, how many free sessions you've used, and your flash-intensity setting.
+          None of it is backed up to a BeatFlash server, because there isn't one to back it up to.
+          Uninstalling the app, or clearing its storage from your device's settings, permanently deletes all of it.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="third-party">
+        <h2><span class="n">07</span>Third-Party Services</h2>
+        <p>
+          BeatFlash links out to a small number of pages — support, terms, and this policy — which open in
+          your device's browser rather than inside the app. Those pages, and the app stores themselves, have
+          their own privacy practices; this policy only covers BeatFlash the app itself. Beyond that,
+          BeatFlash doesn't embed any third-party analytics, advertising, or tracking software.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="children">
+        <h2><span class="n">08</span>Children's Privacy</h2>
+        <p>
+          BeatFlash is not directed at children under 13 and doesn't knowingly collect personal information
+          from anyone, regardless of age — there's no mechanism in the app to collect it from any user in
+          the first place.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="rights">
+        <h2><span class="n">09</span>Your Rights &amp; Choices</h2>
+        <p>
+          Because your data lives on your device, you're already in control of it: uninstall BeatFlash, or
+          clear its storage, and everything it has stored locally is gone immediately. There's no account
+          to delete and no server-side copy to request, correct, or export, because none exists. For
+          anything tied to a purchase — receipts, refunds, or payment history — those records are held by
+          Apple or Google, and their standard account tools apply.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="changes">
+        <h2><span class="n">10</span>Changes to This Policy</h2>
+        <p>
+          If this policy changes, we'll update the effective date at the top of this page. Continuing to use
+          BeatFlash after a change means you accept the update. We won't use a change to this policy to start
+          collecting data it didn't previously disclose without telling you first.
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="contact">
+        <h2><span class="n">11</span>Contact</h2>
+        <p>
+          Questions about this policy or how BeatFlash handles your data? Reach us at
+          <a href="mailto:privacy@beatflash.app">privacy@beatflash.app</a>.
+        </p>
+      </section>
+
+      <footer>
+        <span>© 2026 BeatFlash</span>
+        <span>Effective August 21, 2026</span>
+      </footer>
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
