@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niio Support</title>
+<meta name="description" content="Get help with the Niio pregnancy tracker app." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #fff8f5;
+    --surface: #ffffff;
+    --surface-2: #fff0eb;
+    --text: #3d2035;
+    --text-muted: #8b6577;
+    --border: #f0dce4;
+    --accent: #e8789a;
+    --accent-2: #c8a4d4;
+    --accent-3: #fbcaac;
+    --safe: #3f8d77;
+    --shadow: 0 1px 2px rgba(61,32,53,.05), 0 12px 32px rgba(61,32,53,.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1817;
+      --surface: #262120;
+      --surface-2: #2e2827;
+      --text: #f2e9e5;
+      --text-muted: #c9bcb8;
+      --border: #3a3231;
+      --accent: #f0907f;
+      --accent-2: #c8a4d4;
+      --accent-3: #fbcaac;
+      --safe: #6fc5ab;
+      --shadow: 0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c1817;
+    --surface: #262120;
+    --surface-2: #2e2827;
+    --text: #f2e9e5;
+    --text-muted: #c9bcb8;
+    --border: #3a3231;
+    --accent: #f0907f;
+    --accent-2: #c8a4d4;
+    --accent-3: #fbcaac;
+    --safe: #6fc5ab;
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent-2); }
+  a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap { max-width: 46rem; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2rem) 5rem; }
+
+  .masthead { padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+
+  .logo-ring {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--accent), var(--accent-3), var(--accent-2), var(--accent));
+    position: relative;
+    animation: spin 6s linear infinite;
+  }
+  .logo-ring::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--bg); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .logo-ring { animation: none; } }
+
+  .wordmark { font-family: "Quicksand", "Segoe UI", system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--text-muted); display: block; margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: "Quicksand", "Segoe UI", system-ui, sans-serif;
+    font-weight: 700; font-size: clamp(32px, 5vw, 46px); line-height: 1.12;
+    letter-spacing: -0.015em; margin: 0 0 16px; text-wrap: balance;
+  }
+
+  .lede { font-size: 18px; color: var(--text-muted); max-width: 62ch; margin: 0; }
+
+  .summary {
+    margin: 32px 0 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+  }
+  .summary h2 {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 14px;
+  }
+  .summary ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 8px; }
+  .summary li { color: var(--text-muted); }
+  .summary strong { color: var(--text); font-weight: 700; }
+
+  section { margin-top: 44px; }
+
+  h2.section-title {
+    font-family: "Quicksand", "Segoe UI", system-ui, sans-serif;
+    font-weight: 700; font-size: 22px; letter-spacing: -0.01em;
+    margin: 0 0 16px; display: flex; align-items: baseline; gap: 10px; text-wrap: balance;
+  }
+  h2.section-title .n {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 14px; font-weight: 500; color: var(--accent);
+  }
+
+  p { margin: 0; color: var(--text-muted); }
+
+  .faq { display: flex; flex-direction: column; gap: 10px; }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px 18px;
+  }
+  summary {
+    cursor: pointer;
+    font-family: "Quicksand", "Segoe UI", system-ui, sans-serif;
+    font-weight: 650;
+    color: var(--text);
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; float: right; color: var(--accent); font-weight: 700; }
+  details[open] summary::after { content: "\2013"; }
+  details p { margin-top: 10px; }
+
+  .callout {
+    border-left: 3px solid var(--safe);
+    background: var(--surface-2);
+    padding: 14px 18px;
+    border-radius: 0 10px 10px 0;
+    color: var(--text-muted);
+    margin-top: 14px;
+  }
+  .callout strong { color: var(--text); }
+
+  hr.divider {
+    height: 2px; border: 0; margin: 44px 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+    opacity: .55; border-radius: 2px;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  ::selection { background: var(--accent-2); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="brand">
+      <span class="logo-ring" aria-hidden="true"></span>
+      <span class="wordmark">Niio</span>
+    </div>
+    <span class="eyebrow">Support</span>
+    <h1>Get help with Niio.</h1>
+    <p class="lede">
+      Answers to common questions about tracking your pregnancy, kicks, contractions, and appointments
+      in Niio — and how to reach us for anything else.
+    </p>
+
+    <div class="summary">
+      <h2>Fastest way to reach us</h2>
+      <ul>
+        <li>Email <strong><a href="mailto:ninhdevelop.io@gmail.com?subject=Niio%20Support">ninhdevelop.io@gmail.com</a></strong></li>
+        <li>We aim to reply within a few business days.</li>
+        <li>In the app itself: <strong>Profile &rarr; Help &amp; Support</strong> opens this same email address for you.</li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title"><span class="n">01</span>Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How accurate is my due date and current week?</summary>
+        <p>Niio calculates your due date and current week from the date you enter during onboarding (due date, or last period / conception date, converted to an estimate). It's a standard 40-week estimate — always confirm your exact due date and week with your doctor or midwife, especially around key appointments and milestones.</p>
+      </details>
+      <details>
+        <summary>Are my kick counter, contraction, weight, and symptom logs saved?</summary>
+        <p>Yes — entries you log in the Kick Counter, Contraction Timer, Weight, and Symptom screens are saved to your device's local storage and are still there the next time you open Niio. Nothing is uploaded to a server; everything stays on your phone.</p>
+      </details>
+      <details>
+        <summary>My appointment reminders aren't showing up.</summary>
+        <p>Make sure notifications are allowed for Niio in your phone's system settings, and that the appointment has a reminder set in the app. On some Android phones, battery-saving settings can also delay or block scheduled notifications — check that Niio is excluded from battery optimisation.</p>
+      </details>
+      <details>
+        <summary>How do I cancel or manage my subscription?</summary>
+        <p>Subscriptions are billed and managed entirely by the App Store or Google Play, not by us. On iPhone, go to Settings &rarr; your name &rarr; Subscriptions. On Android, open the Play Store app &rarr; Menu &rarr; Payments &amp; subscriptions &rarr; Subscriptions. Cancelling there stops all future charges.</p>
+      </details>
+      <details>
+        <summary>Is my data backed up anywhere?</summary>
+        <p>No — Niio has no accounts and no servers, so everything you log stays on your device. If your phone backs up app data automatically (iCloud or Android Backup), a copy may exist there under your own account, but we have no access to it and can't restore data for you.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <p>Uninstalling the app removes its database and settings from your device, and everything stored in them — due date, logs, checklist state, everything. There's nothing else to delete on our end, since nothing is stored anywhere but your phone.</p>
+      </details>
+      <details>
+        <summary>I found a bug or have a feature request.</summary>
+        <p>Email us with your device model, OS version, and what happened — screenshots help a lot. We read every message.</p>
+      </details>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section>
+    <h2 class="section-title"><span class="n">02</span>Contact</h2>
+    <p>For anything not covered above, email <a href="mailto:ninhdevelop.io@gmail.com?subject=Niio%20Support">ninhdevelop.io@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <span>Niio</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
