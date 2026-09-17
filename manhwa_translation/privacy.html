@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Niio Transcreen</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f6f9;
+    --text: #17171c;
+    --dim: #5b5b66;
+    --muted: #82828e;
+    --line: #e3e3ea;
+    --accent: #5b4de0;
+    --accent-soft: #efedfd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101015;
+      --surface: #1a1a21;
+      --text: #f0f0f4;
+      --dim: #b4b4c0;
+      --muted: #8b8b98;
+      --line: #2b2b35;
+      --accent: #9b8dff;
+      --accent-soft: #23203a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 80px; }
+  header { padding: 56px 0 28px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 12px; letter-spacing: -.02em; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0; }
+  .langs { display: flex; gap: 8px; margin: 22px 0 0; }
+  .langs button {
+    font: inherit; font-size: 14px; font-weight: 600;
+    padding: 7px 15px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: transparent; color: var(--dim);
+  }
+  .langs button[aria-pressed="true"] {
+    background: var(--accent-soft); border-color: transparent; color: var(--accent);
+  }
+  h2 {
+    font-size: 21px; line-height: 1.3; margin: 44px 0 12px;
+    letter-spacing: -.01em; scroll-margin-top: 20px;
+  }
+  h3 { font-size: 16px; margin: 26px 0 8px; }
+  p, li { color: var(--dim); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { color: var(--text); font-weight: 650; }
+  a { color: var(--accent); }
+  .callout {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 18px 20px; margin: 0 0 8px;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 20px; font-size: 15px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--text); font-weight: 650; font-size: 13px; letter-spacing: .02em; }
+  td { color: var(--dim); }
+  .scroller { overflow-x: auto; }
+  footer {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 14px;
+  }
+  [hidden] { display: none !important; }
+  @media (max-width: 520px) {
+    header { padding-top: 40px; }
+    h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Niio Transcreen</p>
+  <h1 data-en="Privacy Policy" data-vi="Chính sách quyền riêng tư">Privacy Policy</h1>
+  <p class="meta">
+    <span data-en="Last updated: 16 September 2026" data-vi="Cập nhật lần cuối: 16/09/2026">Last updated: 16 September 2026</span>
+  </p>
+  <div class="langs">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="vi" aria-pressed="false">Tiếng Việt</button>
+  </div>
+</header>
+
+<!-- ======================= ENGLISH ======================= -->
+<main id="en">
+
+  <div class="callout" style="margin-top:32px">
+    <p><strong>The short version.</strong> Niio Transcreen translates comics on your iPhone. The pages you read, the images you translate, and the translations themselves never leave your device — Apple's on-device translation and text recognition do that work locally. We only send data to a server when you choose to sign in, and then only what is needed to keep your token balance attached to your account.</p>
+  </div>
+
+  <h2>1. Who this policy covers</h2>
+  <p>This policy explains how the Niio Transcreen iOS app handles your information. It applies to the app only. It does not cover third-party websites you visit through the app's built-in browser — those sites have their own policies.</p>
+
+  <h2>2. What stays on your device</h2>
+  <p>The following never leaves your iPhone and is never sent to us or to anyone else:</p>
+  <ul>
+    <li><strong>Page images and recognised text.</strong> Text recognition runs locally using Apple's Vision framework.</li>
+    <li><strong>Translations.</strong> Produced locally by Apple's Translation framework. Comic text is not uploaded for translation.</li>
+    <li><strong>Browsing history</strong> from the in-app browser, and any bookmarks or recently read pages.</li>
+    <li><strong>Translation cache and story memory</strong> — character names, terminology, relationships, and the dialogue corrections you save.</li>
+    <li><strong>Photos you pick</strong> for the image translator. They are read, translated, and discarded; they are not uploaded.</li>
+    <li><strong>App settings</strong> such as language, appearance, and translation quality.</li>
+  </ul>
+  <p>All of this is deleted when you delete the app from your device.</p>
+
+  <h2>3. What we collect</h2>
+  <p>Signing in is optional. If you never sign in, we do not collect or store any personal data about you on our servers.</p>
+
+  <h3>If you sign in with Apple</h3>
+  <p>We use Firebase Authentication and Cloud Firestore, both operated by Google, to create an account and hold your token balance. We store:</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Data</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Account identifier</td><td>To recognise your account across devices and reinstalls.</td></tr>
+      <tr><td>Email address</td><td>To identify your account and contact you about it. If you chose Apple's <em>Hide My Email</em>, we only ever receive Apple's private relay address.</td></tr>
+      <tr><td>Name, if you shared it</td><td>To address you in the app.</td></tr>
+      <tr><td>Sign-in timestamps</td><td>Account security and support.</td></tr>
+      <tr><td>Token balance and App&nbsp;Store transaction identifiers</td><td>To restore tokens you paid for when you change devices, and to make sure a purchase is never credited twice.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>We do not use analytics or crash-reporting services, and we do not collect your location, contacts, or photo library.</p>
+
+  <h2>4. Advertising</h2>
+  <p>Readers on the free tier are shown ads supplied by <strong>Google AdMob</strong>. AdMob may process device identifiers and information about how you interact with an ad in order to serve and measure it. The app does not ask for permission to track you across other companies' apps and websites, so these ads are non-personalised.</p>
+  <p>Google's handling of this data is described in the <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Google privacy &amp; terms</a>. Premium subscribers see no ads at all.</p>
+
+  <h2>5. Purchases</h2>
+  <p>Subscriptions and token packs are sold and processed by Apple through the App Store. <strong>We never see or store your payment details.</strong> Apple tells the app only whether a purchase succeeded, and gives us an anonymous transaction identifier that we record so the same purchase is not credited twice.</p>
+
+  <h2>6. Third-party websites</h2>
+  <p>The app includes a browser for reading comics on the web. When you visit a website in it, that website receives your requests directly and applies its own privacy policy and cookies. We do not read, log, or transmit what you browse.</p>
+
+  <h2>7. How long we keep your data</h2>
+  <p>Account data stays on our servers for as long as your account exists. On-device data lives until you delete the app or clear it in the app's settings. Deleting the app does not by itself delete your account data from our servers — request deletion as described below.</p>
+
+  <h2>8. Your choices and rights</h2>
+  <ul>
+    <li><strong>Use the app without an account.</strong> Sign-in is only needed to buy Premium or token packs and to carry tokens across devices.</li>
+    <li><strong>Sign out at any time</strong> from Settings. Tokens you bought remain attached to your account and return when you sign back in.</li>
+    <li><strong>Clear on-device data</strong> — translation cache, story memory, and saved corrections — from within the app.</li>
+    <li><strong>Request access, correction, or deletion</strong> of your account data by emailing us. We will action deletion requests within 30 days.</li>
+  </ul>
+  <p>Depending on where you live, you may have additional rights under laws such as the GDPR or the CCPA, including the right to object to processing and the right to lodge a complaint with your data protection authority. <strong>We do not sell your personal information.</strong></p>
+
+  <h2>9. Children</h2>
+  <p>Niio Transcreen is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child has given us personal information, contact us and we will delete it.</p>
+
+  <h2>10. International transfers</h2>
+  <p>Our service providers, Apple and Google, operate globally. Account data held in Firebase may be processed on servers outside your country, under the safeguards those providers apply.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>If this policy changes in a way that affects you, we will update the date at the top of this page and, where the change is significant, tell you in the app.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions, or a request about your data: <a href="mailto:CONTACT_EMAIL_HERE">CONTACT_EMAIL_HERE</a></p>
+
+</main>
+
+<!-- ======================= TIẾNG VIỆT ======================= -->
+<main id="vi" hidden>
+
+  <div class="callout" style="margin-top:32px">
+    <p><strong>Tóm tắt.</strong> Niio Transcreen dịch truyện tranh ngay trên iPhone của bạn. Những trang bạn đọc, ảnh bạn dịch và bản dịch đều không rời khỏi máy — việc nhận diện chữ và dịch do các khung xử lý ngay trên thiết bị của Apple đảm nhận. Chúng tôi chỉ gửi dữ liệu lên máy chủ khi bạn chủ động đăng nhập, và khi đó cũng chỉ gửi những gì cần thiết để giữ số token gắn với tài khoản của bạn.</p>
+  </div>
+
+  <h2>1. Phạm vi áp dụng</h2>
+  <p>Chính sách này giải thích cách ứng dụng Niio Transcreen trên iOS xử lý thông tin của bạn. Nó chỉ áp dụng cho ứng dụng, không áp dụng cho các website bên thứ ba mà bạn truy cập qua trình duyệt tích hợp — những trang đó có chính sách riêng của họ.</p>
+
+  <h2>2. Những gì nằm lại trên máy bạn</h2>
+  <p>Những dữ liệu sau không bao giờ rời khỏi iPhone và không được gửi cho chúng tôi hay bất kỳ ai:</p>
+  <ul>
+    <li><strong>Ảnh trang truyện và văn bản nhận diện được.</strong> Việc nhận diện chữ chạy cục bộ bằng khung Vision của Apple.</li>
+    <li><strong>Bản dịch.</strong> Do khung Translation của Apple tạo ra ngay trên máy. Lời thoại trong truyện không được tải lên đâu cả để dịch.</li>
+    <li><strong>Lịch sử duyệt web</strong> trong trình duyệt tích hợp, cùng các trang đã lưu và trang đọc gần đây.</li>
+    <li><strong>Bộ nhớ đệm bản dịch và trí nhớ truyện</strong> — tên nhân vật, thuật ngữ, quan hệ, và những câu thoại bạn sửa rồi lưu lại.</li>
+    <li><strong>Ảnh bạn chọn</strong> để dịch. Ảnh được đọc, dịch rồi bỏ đi; không được tải lên.</li>
+    <li><strong>Cài đặt ứng dụng</strong> như ngôn ngữ, giao diện, chất lượng dịch.</li>
+  </ul>
+  <p>Toàn bộ những thứ trên bị xoá khi bạn gỡ ứng dụng khỏi máy.</p>
+
+  <h2>3. Những gì chúng tôi thu thập</h2>
+  <p>Đăng nhập là tuỳ chọn. Nếu bạn không đăng nhập, chúng tôi không thu thập hay lưu bất kỳ dữ liệu cá nhân nào của bạn trên máy chủ.</p>
+
+  <h3>Nếu bạn đăng nhập bằng Apple</h3>
+  <p>Chúng tôi dùng Firebase Authentication và Cloud Firestore, đều do Google vận hành, để tạo tài khoản và giữ số token. Chúng tôi lưu:</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Dữ liệu</th><th>Để làm gì</th></tr></thead>
+    <tbody>
+      <tr><td>Mã định danh tài khoản</td><td>Nhận ra tài khoản của bạn khi đổi máy hoặc cài lại.</td></tr>
+      <tr><td>Địa chỉ email</td><td>Xác định tài khoản và liên hệ khi cần. Nếu bạn chọn <em>Ẩn email của tôi</em> của Apple thì chúng tôi chỉ nhận được địa chỉ chuyển tiếp ẩn danh do Apple cấp.</td></tr>
+      <tr><td>Tên, nếu bạn chia sẻ</td><td>Để xưng hô trong ứng dụng.</td></tr>
+      <tr><td>Thời điểm đăng nhập</td><td>Bảo mật tài khoản và hỗ trợ người dùng.</td></tr>
+      <tr><td>Số dư token và mã giao dịch App&nbsp;Store</td><td>Khôi phục token bạn đã trả tiền khi đổi máy, và bảo đảm một lần mua không bị cộng hai lần.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Chúng tôi không dùng dịch vụ phân tích hay báo lỗi nào, và không thu thập vị trí, danh bạ hay thư viện ảnh của bạn.</p>
+
+  <h2>4. Quảng cáo</h2>
+  <p>Người dùng gói miễn phí sẽ thấy quảng cáo do <strong>Google AdMob</strong> cung cấp. AdMob có thể xử lý mã định danh thiết bị và thông tin về cách bạn tương tác với quảng cáo để hiển thị và đo lường. Ứng dụng không xin quyền theo dõi bạn trên các ứng dụng và website của công ty khác, nên những quảng cáo này là loại không cá nhân hoá.</p>
+  <p>Cách Google xử lý dữ liệu này được mô tả tại <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">trang điều khoản và quyền riêng tư của Google</a>. Người dùng Premium không thấy quảng cáo nào.</p>
+
+  <h2>5. Thanh toán</h2>
+  <p>Gói đăng ký và gói token do Apple bán và xử lý qua App Store. <strong>Chúng tôi không bao giờ nhìn thấy hay lưu thông tin thanh toán của bạn.</strong> Apple chỉ báo cho ứng dụng biết giao dịch có thành công hay không, kèm một mã giao dịch ẩn danh mà chúng tôi ghi lại để cùng một lần mua không bị cộng token hai lần.</p>
+
+  <h2>6. Website bên thứ ba</h2>
+  <p>Ứng dụng có trình duyệt để đọc truyện trên web. Khi bạn vào một website trong đó, website nhận yêu cầu trực tiếp từ bạn và áp dụng chính sách quyền riêng tư cùng cookie của họ. Chúng tôi không đọc, không ghi lại, không truyền đi những gì bạn duyệt.</p>
+
+  <h2>7. Thời gian lưu trữ</h2>
+  <p>Dữ liệu tài khoản nằm trên máy chủ chừng nào tài khoản của bạn còn tồn tại. Dữ liệu trên máy tồn tại tới khi bạn gỡ ứng dụng hoặc tự xoá trong phần cài đặt. Gỡ ứng dụng không tự động xoá dữ liệu tài khoản trên máy chủ — hãy yêu cầu xoá theo hướng dẫn bên dưới.</p>
+
+  <h2>8. Lựa chọn và quyền của bạn</h2>
+  <ul>
+    <li><strong>Dùng ứng dụng mà không cần tài khoản.</strong> Chỉ cần đăng nhập khi muốn mua Premium, mua gói token, hoặc mang token qua máy khác.</li>
+    <li><strong>Đăng xuất bất cứ lúc nào</strong> trong phần Cài đặt. Token đã mua vẫn gắn với tài khoản và quay lại khi bạn đăng nhập lại.</li>
+    <li><strong>Xoá dữ liệu trên máy</strong> — bộ nhớ đệm bản dịch, trí nhớ truyện, và các câu thoại đã sửa — ngay trong ứng dụng.</li>
+    <li><strong>Yêu cầu xem, sửa hoặc xoá</strong> dữ liệu tài khoản bằng cách gửi email cho chúng tôi. Chúng tôi xử lý yêu cầu xoá trong vòng 30 ngày.</li>
+  </ul>
+  <p>Tuỳ nơi bạn sinh sống, bạn có thể có thêm quyền theo các luật như GDPR hoặc CCPA, bao gồm quyền phản đối việc xử lý dữ liệu và quyền khiếu nại lên cơ quan bảo vệ dữ liệu. <strong>Chúng tôi không bán thông tin cá nhân của bạn.</strong></p>
+
+  <h2>9. Trẻ em</h2>
+  <p>Niio Transcreen không hướng tới trẻ em dưới 13 tuổi và chúng tôi không cố ý thu thập thông tin cá nhân của các em. Nếu bạn cho rằng một trẻ em đã cung cấp thông tin cá nhân cho chúng tôi, hãy liên hệ và chúng tôi sẽ xoá.</p>
+
+  <h2>10. Chuyển dữ liệu quốc tế</h2>
+  <p>Các nhà cung cấp dịch vụ của chúng tôi là Apple và Google đều hoạt động toàn cầu. Dữ liệu tài khoản lưu trên Firebase có thể được xử lý tại máy chủ ngoài quốc gia của bạn, theo các biện pháp bảo vệ mà những nhà cung cấp đó áp dụng.</p>
+
+  <h2>11. Thay đổi chính sách</h2>
+  <p>Nếu chính sách này thay đổi theo hướng ảnh hưởng tới bạn, chúng tôi sẽ cập nhật ngày ở đầu trang, và thông báo trong ứng dụng nếu thay đổi là đáng kể.</p>
+
+  <h2>12. Liên hệ</h2>
+  <p>Mọi câu hỏi hoặc yêu cầu về dữ liệu của bạn: <a href="mailto:CONTACT_EMAIL_HERE">CONTACT_EMAIL_HERE</a></p>
+
+</main>
+
+<footer>
+  <p>© 2026 Niio Transcreen</p>
+</footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.langs button');
+    var panes = { en: document.getElementById('en'), vi: document.getElementById('vi') };
+    var titles = document.querySelectorAll('[data-en]');
+
+    function show(lang) {
+      panes.en.hidden = lang !== 'en';
+      panes.vi.hidden = lang !== 'vi';
+      document.documentElement.lang = lang;
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+      titles.forEach(function (el) {
+        el.textContent = el.dataset[lang];
+      });
+      try { localStorage.setItem('niio-privacy-lang', lang); } catch (e) {}
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { show(b.dataset.lang); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('niio-privacy-lang'); } catch (e) {}
+    var prefersVietnamese = (navigator.language || '').toLowerCase().indexOf('vi') === 0;
+    show(saved || (prefersVietnamese ? 'vi' : 'en'));
+  })();
+</script>
+
+</body>
+</html>
