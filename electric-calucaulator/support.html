@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Electric Calculator</title>
+  <meta name="description" content="Help, FAQ and contact for the Electric Calculator app for Android and iOS.">
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --card: #ffffff;
+      --fg: #0f1117;
+      --muted: #5b6272;
+      --border: #e2e5ee;
+      --accent: #b88a00;
+      --brand: #f5c518;
+      --brand-deep: #e6a800;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --card: #1a1d27;
+        --fg: #f0f2f8;
+        --muted: #8b91a7;
+        --border: #252836;
+        --accent: #f5c518;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 16px 64px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .logo {
+      flex: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+      display: grid;
+      place-items: center;
+    }
+    .logo svg { width: 30px; height: 30px; }
+    .app { margin: 0; font-size: 14px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+    h1 { margin: 0; font-size: 28px; line-height: 1.2; }
+    .lead { color: var(--muted); margin: 16px 0 24px; }
+    .contact {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brand);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 0 0 32px;
+    }
+    .contact h2 { margin: 0 0 6px; padding: 0; border: 0; font-size: 18px; }
+    .contact p { margin: 0 0 14px; }
+    .contact .tip { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+      color: #0f1117;
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 1.3;
+      margin: 40px 0 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    p, ul { margin: 0 0 14px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .path { font-weight: 600; white-space: nowrap; }
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 0 0 10px;
+    }
+    summary {
+      cursor: pointer;
+      padding: 14px 44px 14px 18px;
+      font-weight: 600;
+      list-style: none;
+      position: relative;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    details[open] summary::after { content: "−"; }
+    details > div { padding: 0 18px 4px; }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer a { margin-right: 16px; }
+    @media (max-width: 480px) {
+      main { padding-top: 24px; }
+      h1 { font-size: 24px; }
+      .path { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" fill="#0f1117"/></svg>
+    </div>
+    <div>
+      <p class="app">Electric Calculator</p>
+      <h1>Support</h1>
+    </div>
+  </header>
+
+  <p class="lead">Need help with Electric Calculator for Android or iOS? Check the answers below, or send us an email.</p>
+
+  <div class="contact" id="contact">
+    <h2>Contact us</h2>
+    <p>Questions, bug reports and ideas for new calculators are all welcome. We usually reply within 2 business days.</p>
+    <a class="btn" href="mailto:ninhdevelop.io@gmail.com?subject=Electric%20Calculator%20Support">ninhdevelop.io@gmail.com</a>
+    <p class="tip">To help us fix problems faster, please include your device model, your iOS or Android version, the app version, and the calculator and values you used. You can also reach us from inside the app: <span class="path">Settings → Support → Contact Support</span>.</p>
+  </div>
+
+  <h2 id="faq">Frequently asked questions</h2>
+
+  <details>
+    <summary>How do I save a favorite calculator?</summary>
+    <div><p>Open any calculator and tap the ⭐ icon. Your favorites appear in <span class="path">My Tools</span>, together with your recently used calculators.</p></div>
+  </details>
+
+  <details>
+    <summary>How do I save, share or export a result as PDF?</summary>
+    <div><p>After calculating, use the buttons under the result. <strong>Save</strong> keeps it in your history, <strong>Copy</strong> copies it, <strong>Share</strong> sends it to another app, and <strong>PDF</strong> creates a PDF with your inputs, the result and the formula used.</p></div>
+  </details>
+
+  <details>
+    <summary>How do I delete my calculation history?</summary>
+    <div><p>Go to <span class="path">History</span>. Use <span class="path">⋮ → Delete</span> on an entry to remove it, or <span class="path">Clear All</span> to remove everything. History is stored only on your device.</p></div>
+  </details>
+
+  <details>
+    <summary>How do I switch between metric and imperial, or mm² and AWG?</summary>
+    <div><p>Open <span class="path">Settings → Units</span>. Choose the <strong>Unit System</strong> (metric or imperial) and the <strong>Wire Size</strong> standard: mm² uses IEC tables and AWG uses NEC tables.</p></div>
+  </details>
+
+  <details>
+    <summary>Can I change the default voltage, frequency, currency or decimal places?</summary>
+    <div><p>Yes. In <span class="path">Settings → General</span> you can set the <strong>Default Voltage</strong> (pre-filled in single-phase calculators), <strong>Default Frequency</strong> (50 or 60 Hz, used for reactance, motors and capacitors), <strong>Currency</strong> (used by the electricity cost calculator) and <strong>Decimal Precision</strong>.</p></div>
+  </details>
+
+  <details>
+    <summary>How do I change the language or turn on dark mode?</summary>
+    <div><p>Open <span class="path">Settings → General</span> and tap <strong>Language</strong> or <strong>Dark Mode</strong>. The app is available in English, Vietnamese, German, French, Spanish, Portuguese, Indonesian, Thai and Russian.</p></div>
+  </details>
+
+  <details>
+    <summary>A result looks wrong. What should I do?</summary>
+    <div>
+      <p>First check the units next to each field (for example W vs kW, or m vs ft) and the settings above, such as the voltage, frequency and wire size standard. Each calculator shows the formula it used under the result.</p>
+      <p>If the result still looks wrong, email us the calculator name, the values you entered and the result you expected, and we will look into it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I remove ads?</summary>
+    <div><p>Go to <span class="path">Settings → Premium → Remove Ads</span> and subscribe to the monthly plan. It removes all banner and full-screen ads. The subscription renews automatically until you cancel it.</p></div>
+  </details>
+
+  <details>
+    <summary>I paid, but I still see ads. How do I restore my purchase?</summary>
+    <div><p>Make sure you are signed in with the same Apple ID or Google account you used to buy, then tap <span class="path">Settings → Premium → Restore Purchases</span>. If ads still appear, email us and include your order ID from the purchase receipt.</p></div>
+  </details>
+
+  <details>
+    <summary>How do I cancel my subscription or request a refund?</summary>
+    <div>
+      <p>Subscriptions are managed by Apple or Google, not by us. Tap <span class="path">Settings → Premium → Manage Subscription</span>, or:</p>
+      <ul>
+        <li><strong>iPhone / iPad:</strong> <span class="path">iOS Settings → [your name] → Subscriptions</span>. Refunds: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
+        <li><strong>Android:</strong> <span class="path">Google Play → Profile → Payments &amp; subscriptions → Subscriptions</span>. Refunds: <a href="https://support.google.com/googleplay/answer/2479637">Google Play refund help</a></li>
+      </ul>
+      <p>Uninstalling the app does not cancel the subscription.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I change my ad privacy choices?</summary>
+    <div><p>Open <span class="path">Settings → Privacy → Privacy Choices</span> to change your consent for personalized ads. On iPhone you can also control tracking in <span class="path">iOS Settings → Privacy &amp; Security → Tracking</span>.</p></div>
+  </details>
+
+  <details>
+    <summary>Does the app work offline? Do I need an account?</summary>
+    <div><p>All calculations run on your device, so they work without an internet connection. There is no account or sign-up. An internet connection is only needed for ads and in-app purchases.</p></div>
+  </details>
+
+  <h2 id="disclaimer">Safety disclaimer</h2>
+  <p>Electric Calculator is a reference tool. Results are estimates based on standard formulas and tables and may not account for every site condition. Always follow your local electrical codes, and have a qualified electrician design, check and carry out work on electrical installations.</p>
+
+  <footer>
+    <p>
+      <a href="https://quangninh-io.github.io/privacy-policy/electric-calucaulator/policy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+    </p>
+    © 2026 Electric Calculator
+  </footer>
+</main>
+</body>
+</html>
