@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 /* VOICE everyday product intro, calm and clear
-   IDEA a precision weighing scale: file size read against the 25 MB email limit
-   PICTURE one wide horizontal scale, files before (past the limit) and after (under it)
+   IDEA a precision scale: file size read against the 25 MB email limit
+   PICTURE one long bar for the original file, cut into parts that each sit under the limit line
    COLOUR aluminium ground, black ink, orange pointer for the limit; night #141517
    TYPE Be Vietnam Pro 700 for titles + Be Vietnam Pro 400 for text
-   LAYOUT title across the top, scale full width below, steps and file types in columns; phone stacks */
-:root{color-scheme:light dark;--bg:light-dark(#e9eaec,#141517);--ink:light-dark(#0c0c0d,#eceef0);--soft:light-dark(#5b5f66,#a2a7ae);--panel:light-dark(#f6f6f7,#1d1f22);--line:light-dark(#c9ccd1,#33363b);--acc:#ff4f00;--ok:light-dark(#0c0c0d,#eceef0);--over:light-dark(#b9bcc2,#4a4e55)}
+   LAYOUT title across the top, scale full width below, steps and details in columns; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#e9eaec,#141517);--ink:light-dark(#0c0c0d,#eceef0);--soft:light-dark(#5b5f66,#a2a7ae);--panel:light-dark(#f6f6f7,#1d1f22);--line:light-dark(#c9ccd1,#33363b);--acc:#ff4f00;--over:light-dark(#b9bcc2,#4a4e55)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:clip}
@@ -35,32 +35,35 @@ h3{font-size:18px;margin:0 0 6px}
 .readout div{text-align:right}
 .readout span{display:block;font-size:14px;color:var(--soft)}
 .readout strong{font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
-.readout .after strong{color:var(--acc)}
+.readout .hot strong{color:var(--acc)}
 .scale{margin-top:36px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px clamp(16px,3vw,32px) 22px}
 .track{position:relative;padding-top:26px}
-.row{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px;align-items:center;margin-bottom:14px}
-.row>span{font-size:14px;color:var(--soft)}
-.bar{position:relative;height:38px}
-.seg{position:absolute;top:0;bottom:0;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-size:13px;white-space:nowrap;overflow:hidden;transition:left .9s ease,width .9s ease}
-.before .seg{background:var(--over);color:var(--ink)}
-.after .seg{background:var(--ink);color:var(--bg)}
-.after .seg.zip{background:var(--acc);color:#fff}
+.row{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px;align-items:center;margin-bottom:10px}
+.row>span{font-size:14px;color:var(--soft);white-space:nowrap}
+.row.orig{margin-bottom:22px}
+.row.orig>span{color:var(--ink);font-weight:500}
+.bar{position:relative;height:34px}
+.seg{position:absolute;top:0;bottom:0;left:0;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-size:13px;white-space:nowrap;overflow:hidden}
+.orig .seg{background:var(--over);color:var(--ink)}
+.orig .cut{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--ink)}
+.part .seg{background:var(--ink);color:var(--bg);animation:grow .8s ease both}
 .limit{position:absolute;top:0;bottom:-6px;width:2px;background:var(--acc)}
 .limit em{position:absolute;top:0;left:8px;font-style:normal;font-size:13px;font-weight:700;color:var(--acc);white-space:nowrap}
 .ticks{position:relative;height:22px;margin-left:calc(7.5em + 12px);border-top:1px solid var(--line)}
 .ticks i{position:absolute;top:4px;font-style:normal;font-size:13px;color:var(--soft);transform:translateX(-50%);white-space:nowrap}
 .note{font-size:13px;color:var(--soft);margin:12px 0 0}
+@keyframes grow{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .step{border-top:2px solid var(--ink);padding-top:16px}
 .step p,.feat p{margin:0;color:var(--soft)}
 .dark{background:var(--ink);color:var(--bg)}
 .dark .lead{color:color-mix(in srgb,var(--bg) 70%,transparent)}
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:32px 56px;align-items:start}
-.scroll{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:12px 10px;border-bottom:1px solid color-mix(in srgb,var(--bg) 22%,transparent);vertical-align:top}
-th{font-weight:500;color:color-mix(in srgb,var(--bg) 65%,transparent);font-size:14px}
-td:first-child{font-weight:700;white-space:nowrap}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px 56px;align-items:start}
+.files{list-style:none;margin:0;padding:0;border-top:1px solid color-mix(in srgb,var(--bg) 22%,transparent)}
+.files li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 22%,transparent)}
+.files code{font:500 15px/1.5 "Be Vietnam Pro",system-ui,sans-serif;overflow-wrap:anywhere}
+.files span{color:color-mix(in srgb,var(--bg) 65%,transparent);font-size:15px;white-space:nowrap}
+.dark .after{margin:20px 0 0;color:color-mix(in srgb,var(--bg) 70%,transparent);max-width:60ch}
 .feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
 .feat div{padding-left:16px;border-left:2px solid var(--acc)}
 .cta{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
@@ -69,15 +72,15 @@ td:first-child{font-weight:700;white-space:nowrap}
 .btn:focus-visible,nav a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line)}
 @media(max-width:860px){.head,.two{grid-template-columns:minmax(0,1fr)}.readout{justify-content:flex-start}.readout div{text-align:left}.grid3{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:600px){.feat{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr);gap:4px}.ticks{margin-left:0}.links{display:none}table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid color-mix(in srgb,var(--bg) 22%,transparent)}.stack td{border:0;padding:3px 0;white-space:normal}.stack td+td::before{content:attr(data-l) ": ";color:color-mix(in srgb,var(--bg) 65%,transparent)}}
-@media(prefers-reduced-motion:reduce){.seg{transition:none}}
+@media(max-width:600px){.feat{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr);gap:4px}.ticks{margin-left:0}.links{display:none}}
+@media(prefers-reduced-motion:reduce){.part .seg{animation:none}}
 </style>
 </head>
 <body>
 <header class="band" style="padding-block:0">
   <nav class="wrap">
     <div class="logo">Gọn<b>25</b></div>
-    <div class="links"><a href="#cach-hoat-dong">Cách hoạt động</a><a href="#loai-file">Loại file</a><a href="#tinh-nang">Tính năng</a></div>
+    <div class="links"><a href="#cach-hoat-dong">Cách hoạt động</a><a href="#ket-qua">Kết quả</a><a href="#tinh-nang">Tính năng</a></div>
   </nav>
 </header>
 
@@ -85,49 +88,47 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="head">
       <div>
-        <h1>File quá nặng để gửi email? Gọn25 làm nó vừa 25 MB.</h1>
-        <p class="lead">Chọn một file hoặc cả một nhóm file. Gọn25 tự nén, tự chia phần nếu cần, và trả về những gói dưới 25 MB để bạn đính kèm vào Gmail, Outlook hay bất kỳ hộp thư nào.</p>
+        <h1>File quá 25 MB? Gọn25 tách nó ra để gửi qua email.</h1>
+        <p class="lead">Chọn một file hoặc cả một nhóm file. Gọn25 tự chia thành các phần nhỏ dưới 25 MB, giữ nguyên nội dung, để bạn đính kèm từng phần vào Gmail, Outlook hay bất kỳ hộp thư nào.</p>
       </div>
       <div class="readout">
-        <div><span>Trước</span><strong id="r-before">87,4 MB</strong></div>
-        <div class="after"><span>Sau khi làm gọn</span><strong id="r-after">23,1 MB</strong></div>
+        <div><span>File gốc</span><strong id="r-size">87,4 MB</strong></div>
+        <div class="hot"><span>Tách thành</span><strong id="r-parts">4 phần</strong></div>
       </div>
     </div>
 
-    <div class="scale" aria-label="Thang dung lượng so với giới hạn 25 MB">
+    <div class="scale" aria-label="File gốc được tách thành các phần dưới 25 MB">
       <div class="track" id="track">
-        <div class="row before"><span>4 file gốc</span><div class="bar" id="b-before"></div></div>
-        <div class="row after"><span>Sau Gọn25</span><div class="bar" id="b-after"></div></div>
+        <div class="row orig"><span>video.mp4</span><div class="bar" id="b-orig"></div></div>
+        <div id="parts"></div>
         <div class="limit" id="limit"><em>Giới hạn email 25 MB</em></div>
       </div>
       <div class="ticks" id="ticks"></div>
-      <p class="note">Ví dụ minh hoạ: 1 video, 2 ảnh chụp và 1 file PDF. Con số thực tế tuỳ từng file.</p>
+      <p class="note">Ví dụ minh hoạ: một video 87,4 MB, chia mỗi phần tối đa 24 MB.</p>
     </div>
   </div>
 </section>
 
 <section class="band" id="cach-hoat-dong">
   <div class="wrap">
-    <h2>Ba bước, không cần cài đặt gì thêm</h2>
+    <h2>Ba bước, không cần biết gì về kỹ thuật</h2>
     <div class="grid3">
-      <div class="step"><h3>Chọn file</h3><p>Kéo thả một file hoặc nhiều file vào cửa sổ. Gọn25 cộng tổng dung lượng và báo ngay bạn đang vượt bao nhiêu so với 25 MB.</p></div>
-      <div class="step"><h3>Tự động làm gọn</h3><p>Mỗi loại file được xử lý theo cách hợp lý nhất: ảnh giảm độ phân giải, video nén lại, PDF tối ưu hình bên trong. Nếu nén vẫn chưa đủ, file được chia thành nhiều phần.</p></div>
-      <div class="step"><h3>Gửi email</h3><p>Nhận về các gói dưới 25 MB, đặt tên rõ ràng theo thứ tự. Đính kèm vào một hoặc nhiều email, người nhận mở ra như bình thường.</p></div>
+      <div class="step"><h3>Chọn file</h3><p>Kéo thả một file hoặc nhiều file vào cửa sổ. Gọn25 cộng tổng dung lượng và cho biết sẽ cần tách thành bao nhiêu phần.</p></div>
+      <div class="step"><h3>Tự động tách</h3><p>Gọn25 chia dữ liệu thành các phần bằng nhau, mỗi phần dưới 25 MB. Nhiều file được gom chung rồi mới tách, nên không phần nào bị phí chỗ.</p></div>
+      <div class="step"><h3>Gửi từng phần</h3><p>Mỗi phần đính kèm vào một email. Các phần được đánh số theo thứ tự để người nhận biết đã nhận đủ hay chưa.</p></div>
     </div>
   </div>
 </section>
 
-<section class="band dark" id="loai-file">
+<section class="band dark" id="ket-qua">
   <div class="wrap two">
     <div>
-      <h2>Mỗi loại file một cách xử lý</h2>
-      <p class="lead">Gọn25 ưu tiên giữ chất lượng đủ dùng. Chỉ khi nén không đưa được xuống dưới 25 MB, nó mới chuyển sang chia phần.</p>
+      <h2>Người nhận ghép lại là ra file gốc</h2>
+      <p class="lead">Gọn25 không nén, không giảm chất lượng. Khi ghép đủ các phần, người nhận có lại đúng file ban đầu, từng byte một.</p>
     </div>
-    <div class="scroll">
-      <table class="stack">
-        <thead><tr><th>Loại file</th><th>Cách làm gọn</th><th>Người nhận thấy gì</th></tr></thead>
-        <tbody id="types"></tbody>
-      </table>
+    <div>
+      <ul class="files" id="files"></ul>
+      <p class="after">Người nhận tải hết các phần về cùng một thư mục, mở phần đầu tiên, file gốc sẽ hiện ra.</p>
     </div>
   </div>
 </section>
@@ -152,65 +153,50 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line)}
 
 <script>
 {
-  const MAX = 100, LIMIT = 25;
-  const before = [{n:"video.mp4",s:58.2},{n:"anh1.jpg",s:9.6},{n:"anh2.jpg",s:8.9},{n:"baocao.pdf",s:10.7}];
-  const after = [{n:"video.mp4",s:14.8},{n:"anh1.jpg",s:1.4},{n:"anh2.jpg",s:1.2},{n:"baocao.pdf",s:5.7}];
+  const MAX = 100, LIMIT = 25, PART = 24;
+  const file = {n: "video.mp4", s: 87.4};
   const fmt = v => v.toFixed(1).replace(".", ",") + " MB";
-  const sum = a => a.reduce((t, f) => t + f.s, 0);
   const pct = v => Math.min(v, MAX) / MAX * 100;
 
-  const fill = (el, files) => {
-    let x = 0;
-    el.innerHTML = files.map((f, i) => {
-      const left = pct(x), w = pct(f.s) - 0.4; x += f.s;
-      const label = w > 9 ? f.n + " · " + fmt(f.s) : "";
-      return `<div class="seg" style="left:${left}%;width:${w}%" title="${f.n} ${fmt(f.s)}">${label}</div>`;
-    }).join("");
-  };
+  const sizes = [];
+  for (let left = file.s; left > 0.001; left -= PART) sizes.push(Math.min(PART, left));
+  const n = sizes.length;
 
-  const bb = document.getElementById("b-before"), ba = document.getElementById("b-after");
-  fill(bb, before);
-  fill(ba, before);
-  document.getElementById("r-before").textContent = fmt(sum(before));
-  document.getElementById("r-after").textContent = fmt(sum(after));
+  document.getElementById("r-size").textContent = fmt(file.s);
+  document.getElementById("r-parts").textContent = n + " phần";
 
-  const track = document.getElementById("track"), limit = document.getElementById("limit"), ticks = document.getElementById("ticks");
+  let cuts = "", acc = 0;
+  sizes.slice(0, -1).forEach(s => { acc += s; cuts += `<i class="cut" style="left:${pct(acc)}%"></i>`; });
+  document.getElementById("b-orig").innerHTML =
+    `<div class="seg" style="width:${pct(file.s)}%">${file.n} · ${fmt(file.s)}</div>` + cuts;
+
+  document.getElementById("parts").innerHTML = sizes.map((s, i) =>
+    `<div class="row part"><span>Phần ${i + 1}</span><div class="bar"><div class="seg" style="width:${pct(s)}%;animation-delay:${i * 0.15}s">${fmt(s)}</div></div></div>`
+  ).join("");
+
+  const pad = i => String(i + 1).padStart(3, "0");
+  document.getElementById("files").innerHTML = sizes.map((s, i) =>
+    `<li><code>${file.n}.gon25.${pad(i)}</code><span>${fmt(s)} · email ${i + 1}</span></li>`
+  ).join("");
+
+  const bo = document.getElementById("b-orig"), track = document.getElementById("track");
+  const limit = document.getElementById("limit"), ticks = document.getElementById("ticks");
   const place = () => {
-    const row = bb.getBoundingClientRect(), tr = track.getBoundingClientRect();
+    const row = bo.getBoundingClientRect(), tr = track.getBoundingClientRect();
     limit.style.left = (row.left - tr.left + row.width * LIMIT / MAX) + "px";
     const narrow = row.width < 420;
     ticks.innerHTML = [0, 25, 50, 75, 100].filter(v => !narrow || v % 50 === 0 || v === 25)
       .map(v => `<i style="left:${v}%">${v} MB</i>`).join("");
   };
   const ro = new ResizeObserver(place); ro.observe(track);
-  setTimeout(() => {
-    let x = 0;
-    [...ba.children].forEach((el, i) => {
-      const f = after[i], w = pct(f.s) - 0.4;
-      el.style.left = pct(x) + "%"; el.style.width = w + "%"; x += f.s;
-      el.title = f.n + " " + fmt(f.s);
-      el.textContent = w > 9 ? f.n + " · " + fmt(f.s) : "";
-    });
-  }, 700);
-
-  const types = [
-    ["Ảnh", "Giảm độ phân giải về mức xem tốt trên màn hình, nén JPEG/WebP", "Ảnh rõ nét, nhẹ hơn nhiều lần"],
-    ["Video", "Nén lại với độ phân giải và bitrate phù hợp", "Video xem được ngay, không cần giải nén"],
-    ["PDF", "Tối ưu hình ảnh bên trong, bỏ dữ liệu thừa", "Một file PDF như cũ, chỉ nhẹ hơn"],
-    ["Word, Excel, PowerPoint", "Nén hình ảnh nhúng trong tài liệu", "Tài liệu mở và sửa bình thường"],
-    ["File khác hoặc vẫn quá lớn", "Đóng gói ZIP và chia thành nhiều phần dưới 25 MB", "Các phần đánh số, gộp lại bằng công cụ giải nén thông dụng"]
-  ];
-  const heads = ["Loại file", "Cách làm gọn", "Người nhận thấy gì"];
-  document.getElementById("types").innerHTML = types.map(r =>
-    "<tr>" + r.map((c, i) => `<td data-l="${heads[i]}">${c}</td>`).join("") + "</tr>").join("");
 
   const feats = [
-    ["Chọn nhiều file cùng lúc", "Kéo thả cả thư mục, Gọn25 tính tổng và xử lý một lượt."],
-    ["Tự chọn cách nén", "Không cần biết về định dạng hay thông số, ứng dụng tự quyết định theo loại file."],
-    ["Xem trước khi gửi", "Hiện dung lượng trước và sau cho từng file, so sánh chất lượng ảnh và video."],
-    ["Chia phần thông minh", "Khi bắt buộc phải chia, mỗi phần vừa dưới 25 MB và được gợi ý gửi trong bao nhiêu email."],
-    ["Chỉnh giới hạn", "Mặc định 25 MB cho Gmail và Outlook, có thể đổi sang 10 MB hay 20 MB cho hộp thư khác."],
-    ["Xử lý ngay trên máy", "File không cần tải lên máy chủ nào, giữ riêng tư cho tài liệu của bạn."]
+    ["Một file hay cả nhóm file", "Chọn bao nhiêu file cũng được. Gọn25 gom lại và tách một lượt."],
+    ["Giữ nguyên chất lượng", "Chỉ tách, không nén, không đổi định dạng. Ghép lại là đúng file gốc."],
+    ["Chừa khoảng an toàn", "Mỗi phần mặc định tối đa 24 MB, thấp hơn giới hạn một chút để email không bị từ chối."],
+    ["Đổi được giới hạn", "Hộp thư chỉ nhận 10 MB hay 20 MB? Chỉnh kích thước mỗi phần cho vừa."],
+    ["Đánh số rõ ràng", "Các phần có tên theo thứ tự, người nhận biết ngay còn thiếu phần nào."],
+    ["Biết trước số email cần gửi", "Trước khi tách, Gọn25 cho biết sẽ ra bao nhiêu phần và cần bao nhiêu email."]
   ];
   document.getElementById("feats").innerHTML = feats.map(f => `<div><h3>${f[0]}</h3><p>${f[1]}</p></div>`).join("");
 }
